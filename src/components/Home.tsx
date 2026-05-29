@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import TextType from './TextType';
-import CVModal from './CVModal';
 
 export default function Home() {
-  const [isCVOpen, setIsCVOpen] = useState(false);
   return (
     <section id="home" className="min-h-screen flex items-center justify-center py-20 md:py-32 relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-8 w-full">
@@ -38,12 +35,14 @@ export default function Home() {
               <a href="mailto:baymaxgumia@gmail.com" className="px-6 sm:px-8 py-3.5 bg-[#00d1d1] text-black text-sm tracking-wide font-medium rounded-xl hover:bg-[#00d1d1]/80 transition-colors shadow-lg shadow-[#00d1d1]/10">
                 Contact Me
               </a>
-              <button
-                onClick={() => setIsCVOpen(true)}
-                className="px-6 sm:px-8 py-3.5 bg-transparent border border-gray-700 text-white text-sm tracking-wide font-medium rounded-xl hover:border-[#00d1d1]/50 transition-colors shadow-sm"
+              <a
+                href="https://canva.link/4vpfveraebno6va"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 sm:px-8 py-3.5 bg-transparent border border-gray-700 text-white text-sm tracking-wide font-medium rounded-xl hover:border-[#00d1d1]/50 transition-colors shadow-sm flex items-center justify-center"
               >
                 View CV
-              </button>
+              </a>
 
               {/* Social Icons with Animations */}
               <div className="flex flex-wrap gap-4 pt-4">
@@ -127,7 +126,7 @@ export default function Home() {
               {/* Image Border/Frame */}
               <div className="absolute inset-0 rounded-full border-4 border-white/20 p-4 backdrop-blur-sm">
                 <div className="w-full h-full rounded-full border-2 border-[#00d1d1]/20 overflow-hidden bg-gray-900 flex items-center justify-center">
-                  <img src="/profile.jpg" alt="Emman Gumia" className="w-full h-full object-cover" />
+                  <img src="/profile.png" alt="Emman Gumia" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -140,7 +139,6 @@ export default function Home() {
         </div>
       </div>
 
-      <CVModal isOpen={isCVOpen} onClose={() => setIsCVOpen(false)} />
     </section>
   );
 }
